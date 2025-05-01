@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Good Morning Rivaa-!!</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(to bottom right, #fceabb, #fac5e4);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    .container {
+      text-align: center;
+      z-index: 2;
+      color: #d63031;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-top: 0;
+    }
+
+    .heart {
+      position: absolute;
+      top: -20px;
+      font-size: 24px;
+      animation-name: fall;
+      animation-timing-function: linear;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>❤️ Good Morning Rivaa-!! ❤️</h1>
+    <p>Semoga hari ini dipenuhi tawa, cinta &amp; kebahagiaan 😄💖</p>
+  </div>
+
+  <!-- Efek animasi hati -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerText = '❤️';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.fontSize = (Math.random() * 10 + 15) + 'px'; // Ukuran acak
+      heart.style.animationDuration = (Math.random() * 2 + 3) + 's'; // Kecepatan acak
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000); // Hapus setelah animasi selesai
+    }
+
+    setInterval(createHeart, 300); // Buat hati setiap 300ms
+  </script>
+
+</body>
+</html>
